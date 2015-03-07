@@ -30,7 +30,7 @@ To choose from this options we need to asnwer question: How much data will be ge
 
 To estimate storage capacity needs we need statistic about file sizes, upload frequencies. We receive this data when service running up. For now make assumptions: 1000 (users) * 3 (videos) * 100 (max file size) = 300 Gb.
 
-If we consider fast grow, but don't know if will it happen. So based on that we choose storage sevice as our file storage. I have satisfied expiriense with s3, so in this case I choose rackspace CloudFiles as our storage service provider.
+If we consider fast grow, but don't know if will it happen. So based on that we choose storage sevice as our file storage. I have satisfied expiriense with s3, and for now I choose Microsoft Azure storage because they offer free trial period. Formely I wanted to use easier option with CloudFiles, but Rackspace from september 2014 no longer offer IaaS without payed customer service.
 
 If we were wrong, we need ability to switch provider or store strategy with minimal effort. Upload libraries solves this. I used paperclip in my recent projects and I have very satisfied with it, and for costumer work I will definetly stick with it. But for this job I will try refile gem because it's doesn't have ffmpeg transcoder gem.
 
