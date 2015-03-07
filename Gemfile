@@ -30,6 +30,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-cucumber'
   gem 'html2haml'
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -37,6 +38,7 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
+  gem 'spring-commands-cucumber'
 end
 group :development, :test do
   gem 'factory_girl_rails'
@@ -44,6 +46,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
   gem 'rubocop'
 end
 group :production do
