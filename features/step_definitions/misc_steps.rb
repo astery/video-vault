@@ -1,13 +1,14 @@
-Given(/^a regular user "(.*?)"$/) do |_arg1|
-  pending # express the regexp above with the code you wish you had
+Given(/^a regular user "(.*?)"$/) do |name|
+  User.create!(name: name, email: "#{name}@example.com", password: 'password', confirmed_at: Time.now)
 end
 
-Given(/^a banned user "(.*?)"$/) do |_arg1|
-  pending # express the regexp above with the code you wish you had
+Given(/^a banned user "(.*?)"$/) do |name|
+  User.create!(name: name, email: "#{name}@example.com", password: 'password', confirmed_at: Time.now, role: :read_only_user)
 end
 
-Given(/^I am logged as "(.*?)"$/) do |_arg1|
-  pending # express the regexp above with the code you wish you had
+Given(/^I am logged as "(.*?)"$/) do |name|
+  u = User.find_by_name!(name)
+  authenticate(u)
 end
 
 When(/^I try to upload "(.*?)" video$/) do |_arg1|
