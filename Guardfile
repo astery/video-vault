@@ -109,7 +109,7 @@ guard :rspec, cmd: 'bin/spring rspec -f doc' do
   end
 end
 
-guard "cucumber", :notification => false do
+guard "cucumber", :command_prefix => 'spring', :bundler => false do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})          { "features" }
 
