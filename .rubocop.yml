@@ -8,3 +8,12 @@ AllCops:
    - 'db/seeds.rb'
    - 'db/schema.rb'
    - 'vendor/bundle/**/*'
+
+Metrics/LineLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+SingleSpaceBeforeFirstArg:
+  Enabled: false
