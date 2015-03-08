@@ -77,7 +77,7 @@ Rails.application.configure do
     address: sec.smtp_provider_host,
     port: sec.smtp_provider_host_port,
     domain: sec.domain_name,
-    authentication: 'plain',
+    authentication: :cram_md5,
     enable_starttls_auto: true,
     user_name: sec.smtp_provider_username,
     password: sec.smtp_provider_password
