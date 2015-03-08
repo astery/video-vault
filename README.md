@@ -2,48 +2,29 @@
 Web-application for converting and storing video files
 
 This application were created for presentation of my ruby skills. You can find detailed description in `doc` folder.
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
-
-Problems? Issues?
------------
-
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
+# Dependencies
 
 This application requires:
 
 - Ruby 2.0.0
 - Rails 4.2.0
 
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
+# Installation
 
-Getting Started
----------------
+1. Install required gems
 
-Documentation and Support
--------------------------
+        bundle install
 
-Issues
--------------
+1. Prepare configuration
 
-Similar Projects
-----------------
+        cp config/database.yml.example
+        cp config/secrets.yml.example
 
-Contributing
-------------
+1. Run application
 
-Credits
--------
+        bin/rails s
 
-License
--------
+# What now?
+
+# License
