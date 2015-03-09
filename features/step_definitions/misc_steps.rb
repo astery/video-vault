@@ -21,7 +21,7 @@ When(/^I try to upload "(.*?)" video$/) do |name|
   # In test I suppose it goes through Mime::Types (output: application/mp4, music/webm)
   # For now use just files with 'video/x-msvideo' type compiled with libx264
 
-  attach_file :video_file, File.join(Rails.root, 'features/file-fixtures', "#{name}.avi")
+  attach_file :video_file, File.join(file_fixtures_dir, "#{name}.avi")
   click_button 'Create Video'
 end
 
@@ -42,8 +42,12 @@ Then(/^I should see "(.*?)" error$/) do |_arg1|
   pending # express the regexp above with the code you wish you had
 end
 
-Given(/^"(.*?)" uploaded "(.*?)" video$/) do |_arg1, _arg2|
-  pending # express the regexp above with the code you wish you had
+Given(/^"(.*?)" uploaded "(.*?)" video$/) do |user_name, video_title|
+  @user = User.find_by_name!(user_name)
+
+  File.open file_fixtures_dir("#{video_title}.avi") do |file|
+    @video = Video.create!(title: video_title, show_at: Time.now, file: file, user: @user)
+  end
 end
 
 Given(/^this video must be delivered at specific time$/) do
@@ -51,9 +55,10 @@ Given(/^this video must be delivered at specific time$/) do
 end
 
 When(/^this time is come$/) do
-  pending # express the regexp above with the code you wish you had
+  # Call mail send handler binded to time
+  pending
 end
 
-Then(/^"(.*?)" should recieve mail with "(.*?)" video$/) do |_arg1, _arg2|
-  pending # express the regexp above with the code you wish you had
+Then(/^"(.*?)" should recieve mail with "(.*?)" video$/) do |user_name, video_title|
+  pending
 end

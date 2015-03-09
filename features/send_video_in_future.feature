@@ -33,7 +33,6 @@ Feature: Send video in future
     When I try to upload "Cat" video
     Then I should see "You do not have ability to upload anymore. You have been banned." error
 
-  @ignore
   Scenario: Jack waits his video from future
     Given "Jack" uploaded "Cat" video
     And this video must be delivered at specific time
