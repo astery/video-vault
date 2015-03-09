@@ -30,7 +30,8 @@ Then(/^I should see "(.*?)"$/) do |text|
 end
 
 Then(/^I should see "(.*?)" in videos list$/) do |text|
-  pending # express the regexp above with the code you wish you had
+  visit videos_path
+  expect(page).to have_content(text)
 end
 
 When(/^I try to upload "(.*?)" videos$/) do |_arg1|
