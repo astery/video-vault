@@ -7,11 +7,11 @@
       %th
       %th
       %th
-      
+
   %tbody
     - @videos.each do |video|
       %tr
-        %td= video.name
+        %td= video.title
         %td= link_to 'Show', video
         %td= link_to 'Edit', edit_video_path(video)
         %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }

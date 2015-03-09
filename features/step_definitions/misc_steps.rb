@@ -13,7 +13,7 @@ end
 
 When(/^I try to upload "(.*?)" video$/) do |name|
   visit new_video_path
-  fill_in :video_name, :with => name
+  fill_in :video_title, :with => name
 
   # TODO: ask capybara folks about it
   # Some inconsistence between real and test environment
@@ -29,7 +29,7 @@ Then(/^I should see "(.*?)"$/) do |text|
   expect(page).to have_content(text)
 end
 
-Then(/^I should see "(.*?)" in videos list$/) do |_arg1|
+Then(/^I should see "(.*?)" in videos list$/) do |text|
   pending # express the regexp above with the code you wish you had
 end
 
