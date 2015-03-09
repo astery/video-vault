@@ -36,5 +36,7 @@ module VideoVault
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.x.mail_processing.schedule = '1h'
   end
 end

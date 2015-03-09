@@ -34,7 +34,6 @@ Feature: Send video in future
     Then I should see "You do not have ability to upload anymore. You have been banned." error
 
   Scenario: Jack waits his video from future
-    Given "Jack" uploaded "Cat" video
-    And this video must be delivered at specific time
-    When this time is come
+    Given "Jack" uploaded "Cat" video for birthday
+    When birthday time is come
     Then "Jack" should recieve mail with "Cat" video

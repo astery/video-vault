@@ -23,6 +23,7 @@ gem 'pundit'
 gem 'simple_form'
 gem 'therubyracer', platform: :ruby
 gem "paperclip", "~> 4.2"
+gem 'rufus-scheduler'
 
 group :development do
   gem 'pry-byebug'

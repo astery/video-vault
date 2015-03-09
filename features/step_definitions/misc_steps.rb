@@ -42,21 +42,29 @@ Then(/^I should see "(.*?)" error$/) do |_arg1|
   pending # express the regexp above with the code you wish you had
 end
 
-Given(/^"(.*?)" uploaded "(.*?)" video$/) do |user_name, video_title|
+Given(/^"(.*?)" uploaded "(.*?)" video for birthday$/) do |user_name, video_title|
   @user = User.find_by_name!(user_name)
+  @deliver_time = Time.now + 10.days
 
+  Rails.configuration.use_transactional_fixtures = false
   File.open file_fixtures_dir("#{video_title}.avi") do |file|
-    @video = Video.create!(title: video_title, show_at: Time.now, file: file, user: @user)
+    @video = Video.create!(title: video_title, show_at: @deliver_time, file: file, user: @user)
   end
 end
 
-Given(/^this video must be delivered at specific time$/) do
-  pending # express the regexp above with the code you wish you had
-end
+When(/^birthday time is come$/) do
+  VideoMailHandler.new(@video).call(nil, nil)
 
-When(/^this time is come$/) do
-  # Call mail send handler binded to time
-  pending
+  # TODO: make proper time emulation trigger
+  # VideoMailSchedulerHandler - called by Rufus::Scheduler work in separate thread
+  # I am unable to interact with it properly
+  # Code below is work but too ugly and in end of road do the same
+  #
+  # Timecop.freeze(@deliver_time)
+  # interval = Rufus::Scheduler.parse_duration(Rails.configuration.x.mail_processing.schedule)
+  # VideoMailSchedulerHandler.new(interval).call(nil, nil)
+  # Rufus::Scheduler.s.jobs.each { |j| j.trigger(@deliver_time) }
+
 end
 
 Then(/^"(.*?)" should recieve mail with "(.*?)" video$/) do |user_name, video_title|

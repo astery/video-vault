@@ -47,3 +47,8 @@ With cdn you often will get expendable storage (amazon has separated from s3 CDN
 * Video
     * Maximum upload file size - 100 Mb
 
+# Mail sending schedule
+Two simple strategies to handle sending mail in time are:
+* Check every minute is there any videos need to be sended - CPU profit/utilization ratio will be nearly zero.
+* Put every uploaded video in array ordered by date - It's better than previous but same sitation and now memory is subject.
+We make hybrid: check all not sended videos every hour and limit memory storage with items those need to be shown in next hour. Here we need special check new incoming videos if they are need to be shown in this hour or next.
