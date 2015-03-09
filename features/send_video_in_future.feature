@@ -13,11 +13,13 @@ Feature: Send video in future
     Then I should see "Video uploaded"
     And I should see "Cat" in videos list
 
+  @ignore
   Scenario: Jack upload a several good videos
     Given I am logged as "Jack"
     When I try to upload "Cats, Dogs, Mices" videos
     Then I should see "Cats, Dogs, Mices" in videos list
 
+  @ignore
   Scenario: Jack upload a bad video
     Given I am logged as "Jack"
     When I try to upload "Too big" video
@@ -25,11 +27,13 @@ Feature: Send video in future
     When I try to upload "Unsupported" video
     Then I should see "Unsupported video format" error
 
+  @ignore
   Scenario: Mariarty upload a good video
     Given I am logged as "Mariarty"
     When I try to upload "Cat" video
     Then I should see "You do not have ability to upload anymore. You have been banned." error
 
+  @ignore
   Scenario: Jack waits his video from future
     Given "Jack" uploaded "Cat" video
     And this video must be delivered at specific time
