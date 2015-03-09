@@ -224,6 +224,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.0.1)
+      byebug (~> 3.4)
+      pry (~> 0.10)
     pry-rails (0.3.3)
       pry (>= 0.9.10)
     pry-rescue (1.4.1)
@@ -400,6 +403,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   paperclip (~> 4.2)
+  pry-byebug
   pry-rails
   pry-rescue
   pundit

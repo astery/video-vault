@@ -25,6 +25,7 @@ gem 'therubyracer', platform: :ruby
 gem "paperclip", "~> 4.2"
 
 group :development do
+  gem 'pry-byebug'
   gem 'better_errors'
   gem 'binding_of_caller', platforms: [:mri_20]
   gem 'capistrano', '~> 3.0.1'
