@@ -8,7 +8,7 @@ end
 
 Given(/^I am logged as "(.*?)"$/) do |name|
   u = User.find_by_name!(name)
-  authenticate(u)
+  signin(u.email, u.password)
 end
 
 When(/^I try to upload "(.*?)" video$/) do |_arg1|
