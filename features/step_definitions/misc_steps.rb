@@ -68,5 +68,6 @@ When(/^birthday time is come$/) do
 end
 
 Then(/^"(.*?)" should recieve mail with "(.*?)" video$/) do |user_name, video_title|
-  pending
+  mail = ActionMailer::Base.deliveries.last
+  expect(mail.body.encoded).to have_xpath("//a[@href='#{video_url(@video, host: Rails.application.secrets.domain_name )}']")
 end

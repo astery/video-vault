@@ -6,6 +6,7 @@ class VideoMailHandler
   end
   def call(job, time)
     Rails.logger.info "[#{time}] #{@video.id} - '#{@video.title}' Has been sended"
+    UserMailer.video_from_past(@video).deliver_now
   end
 end
 
