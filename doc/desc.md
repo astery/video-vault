@@ -32,7 +32,7 @@ To estimate storage capacity needs we need statistic about file sizes, upload fr
 
 If we consider fast grow, but don't know if will it happen. So based on that we choose storage sevice as our file storage. I have satisfied expiriense with s3, and for now I choose Microsoft Azure storage because they offer free trial period. Formely I wanted to use easier option with CloudFiles, but Rackspace from september 2014 no longer offer IaaS without payed customer service.
 
-If we were wrong, we need ability to switch provider or store strategy with minimal effort. Upload libraries solves this. I used paperclip in my recent projects and I have very satisfied with it, and for costumer work I will definetly stick with it. But for this job I will try refile gem because it's doesn't have ffmpeg transcoder gem.
+If we were wrong, we need ability to switch provider or store strategy with minimal effort. Upload libraries solves this. I used paperclip in my recent projects and I have very satisfied with it, and for costumer work I will definetly stick with it. For this job if had enough time I will try refile gem because it's doesn't have ffmpeg transcoder gem, otherwise will stick with paperclip.
 
 # CDN
 With cdn you often will get expendable storage (amazon has separated from s3 CDN called CloudFront). If you want get benefits of cdn you must know how distributed location of your users. For ex. if your users live in CIS (Russia, Ukraine, Belarus, ...) then CloudFront and CloudFiles doesn't fit well, are better options will be onapp.com and local players: ngenix.net, айри.рф, cdnvideo.ru. For ex. with CDN you can decrease latency from 120ms to 20ms.

@@ -22,6 +22,7 @@ gem 'haml-rails'
 gem 'pundit'
 gem 'simple_form'
 gem 'therubyracer', platform: :ruby
+gem "paperclip", "~> 4.2"
 
 group :development do
   gem 'better_errors'
