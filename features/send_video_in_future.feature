@@ -10,7 +10,7 @@ Feature: Send video in future
   Scenario: Jack upload a good video
     Given I am logged as "Jack"
     When I try to upload "Cat" video
-    Then I should see "Video uploaded"
+    Then I should see "Video was successfully created"
     And I should see "Cat" in videos list
 
   @ignore
