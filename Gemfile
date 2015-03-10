@@ -11,6 +11,7 @@ gem 'compass-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-datetimepicker-rails'
+gem 'videojs_rails'
 
 group :development, :test do
   gem 'byebug'

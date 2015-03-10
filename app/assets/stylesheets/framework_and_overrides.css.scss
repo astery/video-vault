@@ -183,3 +183,9 @@ form > .last {
   @extend .radius;
   @extend .tiny;
 }
+
+.vjs-default-skin .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin: -2em auto auto -2em;
+}

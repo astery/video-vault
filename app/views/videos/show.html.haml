@@ -1,9 +1,8 @@
 .row
   .large-8.large-offset-2
-    %p#notice= notice
-    %p
-      %b Title:
-      = @video.title
+    %h1= @video.title
+
+    = videojs_rails sources: { mp4: @video.file.url(:mp4) }, setup: '{}', controls: false, width: '640', height: '480'
 
     = link_to 'Edit', edit_video_path(@video)
     \|

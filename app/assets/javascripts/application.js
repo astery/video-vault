@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require foundation
 //= require jquery.datetimepicker
+//= require video
 //= require_tree .
 $(function() {
   $(document).foundation();
