@@ -66,6 +66,8 @@ end
 
 group :production do
   gem 'unicorn'
+  gem 'unicorn-rails'
+  gem 'pg'
 end
 
 group :test do
