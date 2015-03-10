@@ -14,6 +14,7 @@ end
 When(/^I try to upload "(.*?)" video$/) do |name|
   visit new_video_path
   fill_in :video_title, :with => name
+  fill_in :video_show_at, :with => Time.now + 10.minutes
 
   # TODO: ask capybara folks about it
   # Some inconsistence between real and test environment
