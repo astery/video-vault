@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'compass-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'jquery-datetimepicker-rails'
 
 group :development, :test do
   gem 'byebug'
