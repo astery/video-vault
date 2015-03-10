@@ -1,51 +1,135 @@
 // import the CSS framework
 @import "foundation";
+@import "compass/layout/sticky-footer";
 
-// override for the 'Home' navigation link
-.top-bar .name {
-  font-size: rem-calc(13);
-  line-height: 45px; }
-.top-bar .name a {
-  font-weight: normal;
-  color: white;
-  padding: 0 15px; }
+.top-nav {
+  @extend .row;
+  background: transparent;
+  border-bottom: 1px solid rgba(228, 229, 233, 0.96);
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create mixins using Foundation classes
-@mixin twelve-columns {
-  @extend .small-12;
-  @extend .columns;
+  & > div {
+    @extend .small-6;
+    @extend .columns;
   }
-@mixin six-columns-centered {
-  @extend .small-6;
-  @extend .columns;
+
+  ul {
+    @extend .inline-list;
+    margin-bottom: 0;
+  }
+
+  li {
+    font-size: rem-calc(20);
+    line-height: 56px;
+  }
+
+  .nav-links ul {
+    @extend .right;
+  }
+}
+
+.home-link a {
+  font-family: 'Lobster';
+  font-size: rem-calc(30);
+}
+
+#root > header {
+  margin-bottom: 30px;
+}
+
+#footer {
+  .row {
+    border-top: 1px solid rgba(228, 229, 233, 0.96);
+  }
+
+  .links, .credits {
+    @extend .small-6;
+    @extend .columns;
+  }
+
+  .creadits {
+    @extend .text-right;
+  }
+
+  ul {
+    @extend .inline-list;
+    margin-bottom: 0;
+  }
+
+  li {
+    line-height: 54px;
+  }
+}
+
+@include sticky-footer(54px);
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Volkhov","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+  line-height: 1em;
+  margin: 0;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  color: rgba(83, 85, 93, 0.97);
+  color: rgba(46, 48, 58, 0.96);
+  font-family: "Open Sans",Georgia,Cambria,"Times New Roman",Times,serif;
+  font-size: 1.2em;
+  line-height: 1.56em;
+}
+
+a {
+  color: #ad141e;
+  text-decoration: none;
+  transition: color 0.1s linear 0s;
+
+  &:hover {
+    color: #680c12;
+  }
+  &:hover, &:active {
+    outline: 0 none;
+  }
+}
+
+table {
+  width: 100%;
+}
+
+.hero-wrap {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: -1;
+}
+
+.hero-row {
+  @extend .row;
+  height:100%;
+  display:table;
+}
+
+.hero {
+  @extend .large-8;
+  @extend .large-offset-2;
   @extend .text-center;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.alert-box {
+  padding: rem-calc(4px) rem-calc(14px);
+  font-size: rem-calc(14px);
+  &.round {
+    border-radius: 10px;
   }
-// create your own classes
-// to make views framework-neutral
-.column {
-  @include six-columns-centered;
-  }
-.form {
-  @include grid-column(6);
-  }
-.form-centered {
-  @include six-columns-centered;
-  }
-.submit {
-  @extend .button;
-  @extend .radius;
-  }
-// apply styles to HTML elements
-// to make views framework-neutral
-main {
-  @include twelve-columns;
-  background-color: #eee;
-  }
-section {
+}
+
+.alerts {
   @extend .row;
   margin-top: 20px;
-  }
+}
 
 // Styles for form views
 // using Foundation
@@ -54,36 +138,45 @@ section {
   padding-top: 30px;
   max-width: 320px;
   margin: 0 auto;
+  &:first-child {
+    padding-top: 0;
+  }
 }
-.authform form {
-  @include panel();
-  padding-bottom: 60px;
-}
-.authform form a {
-  font-size: rem-calc(13);
-}
-.authform form p {
-  font-size: rem-calc(13);
-}
-.authform .form-group {
-  // for Bootstrap, not used for Foundation
-}
-.authform .form-control {
-  // for Bootstrap, not used for Foundation
-}
-.authform .checkbox {
-  // for Bootstrap, not used for Foundation
-}
-.authform fieldset {
+form {
   @include panel();
 }
-.authform #error_explanation {
+form a {
+  font-size: rem-calc(13);
+}
+form p {
+  font-size: rem-calc(13);
+}
+.form-group {
+  // for Bootstrap, not used for Foundation
+}
+.form-control {
+  // for Bootstrap, not used for Foundation
+}
+.checkbox {
+  // for Bootstrap, not used for Foundation
+}
+fieldset {
+  @include panel();
+}
+#error_explanation {
   @extend .alert-box;
   @extend .alert;
 }
-.authform #error_explanation h2 {
+#error_explanation h2 {
   font-size: rem-calc(16);
   color: white;
+}
+form {
+  @extend .clearfix;
+}
+form > *:last-child,
+form > .last {
+  margin-bottom: 0px;
 }
 .button-xs {
   @extend .button;

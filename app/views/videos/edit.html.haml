@@ -1,7 +1,10 @@
-%h1 Editing video
+.row
+  .large-8.large-offset-2
+    %h1 Editing video
 
-= render 'form'
+    = render 'form'
 
-= link_to 'Show', @video
-\|
-= link_to 'Back', videos_path
+    .right
+      = link_to 'Back', videos_path
+      \|
+      = link_to 'Show', @video

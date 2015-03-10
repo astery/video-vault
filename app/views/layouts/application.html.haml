@@ -5,13 +5,26 @@
     %title= content_for?(:title) ? yield(:title) : 'Video Vault'
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Video Vault'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Open+Sans&subset=latin,cyrillic'
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Lobster'
+    = stylesheet_link_tag '//fonts.googleapis.com/css?family=Volkhov:400,400italic'
     -# Modernizr is required for Zurb Foundation
     = javascript_include_tag 'vendor/modernizr'
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
-      = render 'layouts/messages'
-      = yield
+    #root
+      %header
+        = render 'layouts/navigation'
+      %section{:role => "main"}
+        = render 'layouts/messages'
+        = yield
+      #root_footer
+    %footer#footer
+      .row
+        .links
+          %ul
+            %li
+              %a{href: '//github.com/astery/video-vault'} Github repository
+        .credits
+
