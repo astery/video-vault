@@ -2,24 +2,27 @@
   .large-8.large-offset-2
     %h1 Listing videos
 
-    %table
-      %thead
-        %tr
-          %th Preview
-          %th Name
-          %th Show date
-          %th
-          %th
-          %th
-
-      %tbody
-        - @videos.each do |video|
+    - if @videos.present?
+      %table
+        %thead
           %tr
-            %td= image_tag video.file.url(:thumb)
-            %td= video.title
-            %td= video.show_at
-            %td= link_to 'Show', video
-            %td= link_to 'Edit', edit_video_path(video)
-            %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            %th Preview
+            %th Name
+            %th Show date
+            %th
+            %th
+            %th
+
+        %tbody
+          - @videos.each do |video|
+            %tr
+              %td= image_tag video.file.url(:thumb)
+              %td= video.title
+              %td= video.show_at
+              %td= link_to 'Show', video
+              %td= link_to 'Edit', edit_video_path(video)
+              %td= link_to 'Destroy', video, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    - else
+      %p.empty_list List is empty
 
     = link_to 'New Video', new_video_path, class: 'button right'
