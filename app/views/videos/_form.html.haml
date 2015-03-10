@@ -1,3 +1,6 @@
+= content_for :messages do
+  = render "layouts/errors", :object => @video
+
 = simple_form_for(@video) do |f|
   = f.error_notification
 

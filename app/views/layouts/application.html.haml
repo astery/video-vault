@@ -18,6 +18,7 @@
         = render 'layouts/navigation'
       %section{:role => "main"}
         = render 'layouts/messages'
+        = content_for :messages
         = yield
       #root_footer
     %footer#footer
